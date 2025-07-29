@@ -283,29 +283,53 @@ IRR4 = npf.irr(Cash_flows4)
 # else:
 #     st.write(f"The IRR with 60% Debt is {IRR1:.2%} and the MOIC is {MOIC1:.2f}x.")
 
+# if np.isnan(IRR1):
+#     st.error("IRR with 60% Debt could not be computed due to invalid cash flows (EBITDA too low).")
+# else:
+#     st.write(f"The IRR with 60% Debt is {IRR1:.2%} and The multiple on Invested Capital is {MOIC1:.2}x.")
+
+# if np.isnan(IRR2):
+#     st.error("IRR with 70% Debt could not be computed due to invalid cash flows (EBITDA too low).")
+# else:
+#     st.write(f"The IRR with 70% Debt is {IRR2:.2%} and The multiple on Invested Capital is {MOIC2:.2}x.")
+
+# if np.isnan(IRR3):
+#     st.error("IRR with 80% Debt could not be computed due to invalid cash flows (EBITDA too low).")
+# else:
+#     st.write(f"The IRR with 80% Debt is {IRR3:.2%} and The multiple on Invested Capital is {MOIC3:.2}x.")
+
+# if np.isnan(IRR4):
+#     st.error("IRR with 90% Debt could not be computed due to invalid cash flows (EBITDA too low).")
+# else:
+#     st.write(f"The IRR with 90% Debt is {IRR4:.2%} and The multiple on Invested Capital is {MOIC4:.2}x.")
+
+# st.text("Thank you")
+     
 if np.isnan(IRR1):
     st.error("IRR with 60% Debt could not be computed due to invalid cash flows (EBITDA too low).")
 else:
-    st.write(f"The IRR with 60% Debt is {IRR1:.2%} and The multiple on Invested Capital is {MOIC1:.2}x.")
+    st.write(f"The IRR with 60% Debt is {IRR1:.2%} and The multiple on Invested Capital is {MOIC1:.2}x WITH annual interest payment of {debt1*EV*Int_rate}.")
 
+st.text(f"The cash flow:  {Cash_flows1}")
 if np.isnan(IRR2):
     st.error("IRR with 70% Debt could not be computed due to invalid cash flows (EBITDA too low).")
 else:
-    st.write(f"The IRR with 70% Debt is {IRR2:.2%} and The multiple on Invested Capital is {MOIC2:.2}x.")
+    st.write(f"The IRR with 70% Debt is {IRR2:.2%} and The multiple on Invested Capital is {MOIC2:.2}x WITH annual interest payment of {debt2*EV*Int_rate}.")
+st.text(f"The cash flow:  {Cash_flows2}")
 
 if np.isnan(IRR3):
     st.error("IRR with 80% Debt could not be computed due to invalid cash flows (EBITDA too low).")
 else:
-    st.write(f"The IRR with 80% Debt is {IRR3:.2%} and The multiple on Invested Capital is {MOIC3:.2}x.")
+    st.write(f"The IRR with 80% Debt is {IRR3:.2%} and The multiple on Invested Capital is {MOIC3:.2}x WITH annual interest payment of {debt3*EV*Int_rate}.")
+st.text(f"The cash flow:  {Cash_flows3}")
 
 if np.isnan(IRR4):
     st.error("IRR with 90% Debt could not be computed due to invalid cash flows (EBITDA too low).")
 else:
-    st.write(f"The IRR with 90% Debt is {IRR4:.2%} and The multiple on Invested Capital is {MOIC4:.2}x.")
+    st.write(f"The IRR with 90% Debt is {IRR4:.2%} and The multiple on Invested Capital is {MOIC4:.2}x WITH annual interest payment of {debt4*EV*Int_rate}.")
+st.text(f"The cash flow:  {Cash_flows4}")
 
 st.text("Thank you")
-     
-
 
 
 
